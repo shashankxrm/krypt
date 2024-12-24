@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "postinstall": "npm install vite"
+    "vercel-build": "npm install && vite build"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
