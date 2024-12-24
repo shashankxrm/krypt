@@ -1,10 +1,11 @@
 {
-  "name": "wave-app",
+  "name": "krypt",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "postinstall": "npm install vite"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
