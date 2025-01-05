@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, Suspense, lazy } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
 import { TransactionContext } from "../context/TransactionContext";
 import { shortenAddress } from "../utils/shortenAddress";
-import { Loader } from ".";
+
+const Loader = lazy(() => import("./Loader"));
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
@@ -102,7 +103,7 @@ const Welcome = () => {
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
             {isLoading
-              ? <Loader />
+              ? <Suspense fallback={<div>Loading...</div>}><Loader /></Suspense>
               : (
                 <button
                   type="button"
